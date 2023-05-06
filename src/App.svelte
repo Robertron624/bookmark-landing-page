@@ -2,6 +2,7 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+  import FeaturesTabs from './FeaturesTabs.svelte'
 </script>
 
 <header>
@@ -16,7 +17,7 @@
     <div class="background-shape"></div>
     <img src="/illustration-hero.svg" alt="illustration of a tablet">
   </div>
-  <div class="intro-text">
+  <section class="intro-text">
     <h1 class="title">
       A Simple Bookmark Manager
     </h1>
@@ -31,7 +32,16 @@
         Get it on Firefox
       </button>
     </div>
-  </div>
+  </section>
+  <section class="features">
+    <h1 class="title">
+      Features
+    </h1>
+    <p class="content">
+      Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.
+    </p>
+    <FeaturesTabs />
+  </section>
 </main>
 
 <style type="text/scss" lang="scss">
@@ -105,6 +115,21 @@
           color: $grayish-blue;
           box-shadow: 1px 2px 7px 0px hsl(229, 8%, 60%);
         }
+      }
+    }
+
+    section.features {
+      margin-top: 7rem;
+
+      h1.title {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $very-dark-blue;
+      }
+
+      p.content {
+        color: $grayish-blue;
+        padding: 0 2rem;
       }
     }
   }

@@ -79,14 +79,15 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 - [Add SASS to Svelte JS with svelte-preprocess](https://linguinecode.com/post/add-sass-svelte-js) - Using Sass with Svelte JS is a little different than using it with React or Vue. This article helped me get Sass working with Svelte JS.
 
+- [Svelte Interactive course](https://svelte.dev/tutorial/classes) - This is the official Svelte JS tutorial. It's a great resource for learning Svelte JS, from state management to component creation.
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Personal Website - [Robert Ramirez](https://robert-ramirez.netlify.app)
+- Frontend Mentor User- [@Robertron624](https://www.frontendmentor.io/profile/Robertron624)
+- Twitter - [@robertdowny](https://www.twitter.com/robertdowny)
+
 
 ## Acknowledgments
 
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
