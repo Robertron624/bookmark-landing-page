@@ -1,8 +1,31 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
   import FeaturesTabs from './FeaturesTabs.svelte'
+  import BrowserCard from './BrowserCard.svelte'
+
+  const browsers = [
+    {
+      name: 'Chrome',
+      version: 62,
+      url: '/logo-chrome.svg'
+    },
+    {
+      name: 'Firefox',
+      version: 55,
+      url: '/logo-firefox.svg'
+    },
+    {
+      name: 'Opera',
+      version: 46,
+      url: '/logo-opera.svg'
+    }
+  ]
+
+  let cats = [
+		{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
+		{ id: 'z_AbfPXTKms', name: 'Maru' },
+		{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
+	];
+
 </script>
 
 <header>
@@ -41,6 +64,11 @@
       Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.
     </p>
     <FeaturesTabs />
+    <section class="browsers">
+      {#each browsers as { name, version, url }}
+        <BrowserCard {name} {version} {url} />
+      {/each}
+    </section>
   </section>
 </main>
 
@@ -131,6 +159,14 @@
         color: $grayish-blue;
         padding: 0 2rem;
       }
+    }
+
+    section.browsers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 
