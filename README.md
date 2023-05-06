@@ -47,8 +47,6 @@ Users should be able to:
 - [Svelte](https://svelte.dev/) - JS library
 - [SaSS](https://sass-lang.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
@@ -80,6 +78,8 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - [Add SASS to Svelte JS with svelte-preprocess](https://linguinecode.com/post/add-sass-svelte-js) - Using Sass with Svelte JS is a little different than using it with React or Vue. This article helped me get Sass working with Svelte JS.
 
 - [Svelte Interactive course](https://svelte.dev/tutorial/classes) - This is the official Svelte JS tutorial. It's a great resource for learning Svelte JS, from state management to component creation.
+
+- [Svelte Native accordion](https://svelte.dev/repl/74ff0da7cb074d4788b996e2d91258d3?version=3.23.0) - This is a great ressource for creating a native group of accordion components in Svelte JS. I used this to create the accordion component in this project.
 ## Author
 
 - Personal Website - [Robert Ramirez](https://robert-ramirez.netlify.app)
