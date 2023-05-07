@@ -85,9 +85,16 @@
         </p>
         <FeaturesTabs />
         <section class="browsers">
-            {#each browsers as { name, version, url }}
-                <BrowserCard {name} {version} {url} />
-            {/each}
+            <h2>Download the extension</h2>
+            <p>
+                We’ve got more browsers in the pipeline. Please do let us know if
+                you’ve got a favourite you’d like us to prioritize.
+            </p>
+            <div class="cards">
+              {#each browsers as { name, version, url }}
+                  <BrowserCard {name} {version} {url} />
+              {/each}
+            </div>
         </section>
     </section>
     <section class="faq">
@@ -335,20 +342,46 @@
             p.content {
                 color: $grayish-blue;
                 padding: 0 2rem;
+
+                @include desktop {
+                  padding: 0 24rem;
+                  margin-bottom: 2rem;
+                }
             }
         }
 
         section.browsers {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 2rem;
+          h2 {
+              margin: 0;
+              font-size: 1.8rem;
+          }
+
+          p {
+            color: $grayish-blue;
+            padding: 0 24rem;
+          }
+
+            .cards {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              gap: 2rem;
+
+              @include desktop {
+                flex-direction: row;
+              }
+            }
         }
 
         section.faq {
             margin-top: 7rem;
             margin-bottom: 5rem;
+
+            @include desktop {
+              max-width: 45rem;
+              margin: 7rem auto 5rem;
+            }
 
             h2 {
                 font-size: 2rem;
@@ -362,7 +395,7 @@
             }
 
             .questions {
-              margin-bottom: 3rem;
+              margin-bottom: 4rem;
             }
 
             button {

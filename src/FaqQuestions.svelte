@@ -49,6 +49,13 @@
         padding: 1.5rem 0;
         text-align: left;
         border-radius: 0;
+        font-weight: 400;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $soft-red;
+        }
 
         &:focus {
             outline: none;
