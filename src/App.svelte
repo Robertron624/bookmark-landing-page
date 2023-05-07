@@ -123,6 +123,18 @@
       margin: 0;
     }
 
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 2rem;
+
+        .mobile-menu {
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+
     main {
         text-align: center;
 
@@ -239,12 +251,6 @@
               padding: 0.8em 1.5em;
             }
         }
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        padding: 2rem 2rem;
     }
 
     footer {

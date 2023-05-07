@@ -1,5 +1,24 @@
 <script>
 
+    let email = '';
+    let inputError = false;
+
+    const validateEmail = (email) => {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        if (!validateEmail(email)) {
+            inputError = true;
+            return;
+        }
+
+        alert(`Email: ${email} submitted!`);
+    }
+
 </script>
 
 <div class="container">
@@ -9,8 +28,14 @@
     <h2>
         Stay up-to-date with what we're doing
     </h2>
-    <form action="POST">
-        <input type="email" placeholder="Enter your email address" />
+    <form on:submit={handleSubmit} action="POST">
+        <div class="email-and-error">
+            <input class:input-error="{inputError == true}" bind:value={email} type="email" placeholder="Enter your email address" />
+            {#if inputError}
+                <span class="error">Whoops, make sure it's an email</span>
+                <img src="/icon-error.svg" alt="exclamation icon" class="error-icon">
+            {/if}
+        </div>
         <button type="submit">Contact Us</button>
     </form>
 </div>
@@ -24,7 +49,7 @@
         color: white;
         padding: 4rem 2rem;
 
-        span {
+        & > span {
             font-size: 1rem;
             font-weight: 500;
             text-transform: uppercase;
@@ -49,14 +74,45 @@
                 border: none;
             }
 
-            input {
-                padding: 0 1rem;
+            .email-and-error {
+                position: relative;
+                input {
+                    padding: 0 1rem;
+                    width: 90%;
+    
+                    &::placeholder {
+                        font-weight: 600;
+                        opacity: 0.4;
+                    }
 
-                &::placeholder {
-                    font-weight: 600;
-                    opacity: 0.4;
+                    &.input-error {
+                        outline: 2px solid $soft-red;
+                        border-radius: 5px;
+                    }
+                }
+
+                .error {
+                    font-size: 0.7rem;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    font-style: italic;
+                    display: inherit;
+                    background-color: $soft-red;
+                    padding: .5rem .7rem;
+                    border-radius:0 0 5px 5px;
+                    outline: 2px solid $soft-red;
+                }
+
+                .error-icon {
+                    position: absolute;
+                    right: 0;
+                    top: 15px;
+                    margin: auto;
+                    padding: 0 1rem;
                 }
             }
+
 
             button {
                 background-color: $soft-red;
