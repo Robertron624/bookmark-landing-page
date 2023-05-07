@@ -15,3 +15,9 @@ $very-dark-blue: hsl(229, 31%, 21%);
         @content;
     }
 }
+
+@mixin desktop-hd {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}

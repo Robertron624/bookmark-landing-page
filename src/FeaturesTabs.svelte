@@ -125,10 +125,10 @@
                 height: 5px;
                 display: block;
                 bottom: 0;
-                animation: bottom-animation 0.3s ease-in-out;
 
                 @include desktop {
                     width: 75%;
+                    animation: bottom-animation 0.3s ease-in-out;
                 }
             }
 
