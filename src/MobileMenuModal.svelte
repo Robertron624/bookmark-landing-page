@@ -123,6 +123,7 @@
             flex-direction: column;
             padding: 0;
             margin: 0;
+            list-style: none;
             li {
                 &:first-of-type {
                     border-top: 1px solid $grayish-blue;

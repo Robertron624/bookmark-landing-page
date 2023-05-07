@@ -31,6 +31,24 @@
 
 <header>
     <img src="/logo-bookmark.svg" alt="bookmark logo" />
+    <nav class="desktop-nav">
+      <ul>
+        <li>
+          <a href="/features">Features</a>
+        </li>
+        <li>
+          <a href="/pricing">Pricing</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+        <li>
+          <button>
+            Login
+          </button>
+        </li>
+      </ul>
+    </nav>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={() => (showModal = true)} class="mobile-menu">
         <img src="/icon-hamburger.svg" alt="hamburger icon" />
@@ -38,23 +56,25 @@
 </header>
 
 <main>
-    <div class="hero">
-        <div class="background-shape" />
-        <img src="/illustration-hero.svg" alt="illustration of a tablet" />
-        <MobileMenuModal bind:showModal >
-        </MobileMenuModal>
-    </div>
-    <section class="intro-text">
-        <h1 class="title">A Simple Bookmark Manager</h1>
-        <p>
-            A clean and simple interface to organize your favourite websites.
-            Open a new browser tab and see your sites load instantly. Try it for
-            free.
-        </p>
-        <div class="buttons">
-            <button> Get it on Chrome </button>
-            <button> Get it on Firefox </button>
-        </div>
+    <section class="hero-intro">
+      <div class="hero">
+          <div class="background-shape" />
+          <img src="/illustration-hero.svg" alt="illustration of a tablet" />
+          <MobileMenuModal bind:showModal >
+          </MobileMenuModal>
+      </div>
+      <section class="intro-text">
+          <h1 class="title">A Simple Bookmark Manager</h1>
+          <p>
+              A clean and simple interface to organize your favourite websites.
+              Open a new browser tab and see your sites load instantly. Try it for
+              free.
+          </p>
+          <div class="buttons">
+              <button> Get it on Chrome </button>
+              <button> Get it on Firefox </button>
+          </div>
+      </section>
     </section>
     <section class="features">
         <h1 class="title">Features</h1>
@@ -128,6 +148,57 @@
         justify-content: space-between;
         padding: 2rem 2rem;
 
+        @include desktop {
+          padding: 2rem 0;
+        }
+
+        & > img {
+          @include desktop {
+            flex: 1;
+            max-width: 18rem;
+          }
+        }
+
+        .desktop-nav {
+            display: none;
+
+            @include desktop {
+                display: flex;
+
+                ul {
+                  display: flex;
+                  align-items: center;
+                  gap: 2rem;
+
+                  li {
+                    a {
+                      color: $grayish-blue;
+                      transition: all 0.3s ease-in-out;
+                      &:hover {
+                        color: $soft-red;
+                      }
+                    }
+
+                    button {
+                      background-color: $soft-red;
+                      color: white;
+                      padding: 0.8em 1.9em;
+                      border: 1.5px solid $soft-red;
+                      transition: all 0.3s ease-in-out;
+                      border-radius: 5px;
+                      text-transform: uppercase;
+                      font-size: .8rem;
+                      &:hover {
+                        background-color: white;
+                        color: $soft-red;
+                      }
+                    }
+                  }
+                  
+                }
+            }
+        }
+
         .mobile-menu {
             @include desktop {
                 display: none;
@@ -138,70 +209,119 @@
     main {
         text-align: center;
 
-        .hero {
-            position: relative;
-            margin-top: 5rem;
+        .hero-intro{
+          @include desktop {
+            display: flex;
+            gap: 2rem;
 
-            .background-shape {
-                z-index: -1;
-                position: absolute;
-                top: 40%;
-                right: 0;
-                width: 76%;
-                height: 150px;
-                background-color: $soft-blue;
-                border-radius: 40% 0 0 40%;
-            }
+          }
 
-            img {
-                width: 90%;
-                z-index: 1;
-            }
+          .hero {
+              position: relative;
+              margin-top: 5rem;
+
+              @include desktop {
+                order: 1;
+                width: 55%;
+              }
+  
+              .background-shape {
+                  z-index: -1;
+                  position: absolute;
+                  top: 40%;
+                  right: 0;
+                  width: 76%;
+                  height: 150px;
+                  background-color: $soft-blue;
+                  border-radius: 40% 0 0 40%;
+
+
+                  @include desktop {
+                    right: -12%;
+                    border-radius:  70% 0 0 70%;
+                    top: 61%;
+                    height: 200px;
+                  }
+              }
+  
+              img {
+                  width: 90%;
+                  z-index: 1;
+              }
+          }
+  
+          .intro-text {
+              margin-top: 3rem;
+
+              @include desktop {
+                text-align: left;
+                width: 45%;
+              }
+  
+              h1.title {
+                  margin-top: 3rem;
+                  font-size: 2rem;
+                  font-weight: 500;
+                  color: $very-dark-blue;
+              }
+  
+              p {
+                  color: $grayish-blue;
+                  padding: 0 2rem;
+
+                  @include desktop {
+                    padding: 0;
+                  }
+              }
+  
+              .buttons {
+                  margin-top: 2rem;
+                  margin-bottom: 2rem;
+                  display: flex;
+                  justify-content: center;
+                  gap: 1rem;
+
+                  @include desktop {
+                    justify-content: flex-start;
+                  }
+  
+                  button {
+                      padding: .9rem 2rem;
+                      border-radius: 5px;
+                      border: none;
+                      font-weight: 500;
+                      cursor: pointer;
+                      transition: all 0.3s ease-in-out;
+                      color: white;
+                  }
+  
+                  button:first-of-type {
+                      background-color: $soft-blue;
+                      border: 2px solid $soft-blue;
+
+                      &:hover {
+                        background-color: white;
+                        color:  $soft-blue;
+                      }
+                  }
+  
+                  button:last-of-type {
+                      background-color: white;
+                      color: $grayish-blue;
+                      box-shadow: 1px 2px 7px 0px hsl(229, 8%, 60%);
+                      border: 2px solid transparent;
+
+                      &:hover {
+                        background-color: white;
+                        color: black;
+                        border: 2px solid $grayish-blue;
+                      }
+                  }
+              }
+          }
+
         }
 
-        .intro-text {
-            margin-top: 3rem;
-
-            h1.title {
-                margin-top: 3rem;
-                font-size: 2rem;
-                font-weight: 500;
-                color: $very-dark-blue;
-            }
-
-            p {
-                color: $grayish-blue;
-                padding: 0 2rem;
-            }
-
-            .buttons {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-
-                button {
-                    // padding: 1rem 2rem;
-                    border-radius: 5px;
-                    border: none;
-                    font-weight: 500;
-                    cursor: pointer;
-                    transition: all 0.3s ease-in-out;
-                    color: white;
-                }
-
-                button:first-of-type {
-                    background-color: $soft-blue;
-                }
-
-                button:last-of-type {
-                    background-color: white;
-                    color: $grayish-blue;
-                    box-shadow: 1px 2px 7px 0px hsl(229, 8%, 60%);
-                }
-            }
-        }
 
         section.features {
             margin-top: 7rem;
