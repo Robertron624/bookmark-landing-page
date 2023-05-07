@@ -15,6 +15,7 @@
             inputError = true;
             return;
         }
+        inputError = false;
 
         alert(`Email: ${email} submitted!`);
     }
@@ -60,12 +61,25 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             margin-top: .3rem;
+            @include desktop {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+                padding: 0 28rem;
+            }
         }
 
         form {
             display: flex;
             gap: 1rem;
             flex-direction: column;
+            max-width: 40rem;
+            margin: 0 auto;
+            
+            @include desktop {
+                flex-direction: row;
+                gap: 2rem;
+                justify-content: center;
+            }
 
             button,
             input {
@@ -76,6 +90,9 @@
 
             .email-and-error {
                 position: relative;
+                @include desktop {
+                    width: 50%;
+                }
                 input {
                     padding: 0 1rem;
                     width: 90%;
@@ -119,7 +136,13 @@
                 color: white;
                 font-weight: 500;
                 cursor: pointer;
+                border: 2px solid $soft-red;
                 transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: white;
+                    color: $soft-red;
+                }
             }
         }
     }

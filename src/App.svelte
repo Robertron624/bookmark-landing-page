@@ -154,6 +154,8 @@
         display: flex;
         justify-content: space-between;
         padding: 2rem 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
 
         @include desktop {
           padding: 2rem 0;
@@ -215,6 +217,8 @@
 
     main {
         text-align: center;
+        max-width: 1280px;
+        margin: 0 auto;
 
         .hero-intro{
           @include desktop {
