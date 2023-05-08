@@ -49,28 +49,11 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
+This was my first solo Svelte JS project. I learned how to use Svelte JS to create components and how to use Svelte JS to manage state. I also learned how to use Svelte JS to create a responsive navigation menu, binding form inputs, conditional classes and some animations for the accordion menus.
+I found Svelte JS to be a very intuitive framework to use and easy to create basic UI elements like modals and accordion menus. I was able to pick up the basics of Svelte JS in a few hours and was able to create this project in a few days. I'm looking forward to using Svelte JS in future projects.
 
 ### Continued development
+I want to keep using Svelte JS in future projects along with react. I want to learn how to use Svelte JS to create more complex UI elements like carousels and sliders. I also want to learn how to use Svelte JS to create more complex animations. Maybe even use Svelte Kit to create a full stack application.
 
 
 ### Useful resources
@@ -80,14 +63,12 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - [Svelte Interactive course](https://svelte.dev/tutorial/classes) - This is the official Svelte JS tutorial. It's a great resource for learning Svelte JS, from state management to component creation.
 
 - [Svelte Native accordion](https://svelte.dev/repl/74ff0da7cb074d4788b996e2d91258d3?version=3.23.0) - This is a great ressource for creating a native group of accordion components in Svelte JS. I used this to create the accordion component in this project.
+
+- [Svelte Modal](https://svelte.dev/examples/modal) - This is a great resource for creating a modal component in Svelte JS. I used this to create the mobile navigation menu in this project.
+
 ## Author
 
 - Personal Website - [Robert Ramirez](https://robert-ramirez.netlify.app)
 - Frontend Mentor User- [@Robertron624](https://www.frontendmentor.io/profile/Robertron624)
 - Twitter - [@robertdowny](https://www.twitter.com/robertdowny)
-
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
