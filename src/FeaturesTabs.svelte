@@ -33,6 +33,7 @@
 </div>
 
 <div class="content">
+    <div class="background-shape" />
     <div class="simple-content" class:selected={currentSelection == "simple"}>
         <img
             src="/illustration-features-tab-1.svg"
@@ -82,6 +83,9 @@
     @import "./vars.scss";
 
     .tabs {
+        width: 90%;
+        margin: 0 auto;
+
         @include desktop {
             display: flex;
             justify-content: center;
@@ -146,13 +150,34 @@
     .content {
         margin-top: 4rem;
         margin-bottom: 5rem;
+        position: relative;
+
+        .background-shape {
+            z-index: -1;
+            position: absolute;
+            top: 14%;
+            left: -10px;
+            width: 76%;
+            height: 185px;
+            background-color: $soft-blue;
+            border-radius: 0% 40% 40% 0%;
+
+            @include desktop {
+                left: -28%;
+                width: 65%;
+                height: 240px;
+                border-radius: 0% 48% 39% 0%;
+                bottom: -14%;
+                top: unset;
+            }
+        }
 
         .selected {
             display: flex !important;
 
             @include desktop {
                 display: grid !important;
-                grid-template-columns: 1fr .8fr;
+                grid-template-columns: 1fr 0.8fr;
                 gap: 5rem;
                 text-align: left;
             }
@@ -167,21 +192,22 @@
             justify-content: center;
 
             img {
-                width: 90%;
+                width: 80%;
+                height: 218px;
 
                 @include desktop {
                     width: 100%;
+                    height: 430px;
                 }
             }
 
             .content-text {
-
                 @include desktop {
                     width: 63%;
                 }
 
                 h2 {
-                    margin-top: 2rem;
+                    margin-top: 6rem;
                     margin-bottom: 0.5rem;
                 }
                 p {
@@ -194,7 +220,7 @@
                         padding: 0;
                     }
                 }
-                
+
                 button {
                     display: none;
                     background-color: $soft-blue;

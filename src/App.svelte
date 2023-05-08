@@ -225,7 +225,7 @@
           @include desktop {
             display: flex;
             gap: 2rem;
-
+            margin-top: 4rem;
           }
 
           .hero {
@@ -234,25 +234,25 @@
 
               @include desktop {
                 order: 1;
-                width: 55%;
+                margin-top: 0;
               }
   
               .background-shape {
                   z-index: -1;
                   position: absolute;
-                  top: 40%;
-                  right: 0;
+                  top: 32%;
+                  right: -10px;
                   width: 76%;
-                  height: 150px;
+                  height: 175px;
                   background-color: $soft-blue;
                   border-radius: 40% 0 0 40%;
 
 
                   @include desktop {
-                    right: -12%;
+                    right: -14%;
                     border-radius:  70% 0 0 70%;
-                    top: 61%;
-                    height: 200px;
+                    top: 50%;
+                    height: 52%;
                   }
               }
   
@@ -268,6 +268,7 @@
               @include desktop {
                 text-align: left;
                 width: 45%;
+                margin: auto 0;
               }
   
               h1.title {
@@ -360,6 +361,8 @@
         }
 
         section.browsers {
+
+          margin-top: 14rem;
           h2 {
               margin: 0;
               font-size: 1.8rem;

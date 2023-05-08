@@ -31,7 +31,7 @@
     </h2>
     <form on:submit={handleSubmit} action="POST">
         <div class="email-and-error">
-            <input class:input-error="{inputError == true}" bind:value={email} type="email" placeholder="Enter your email address" />
+            <input class:input-error="{inputError == true}" bind:value={email} placeholder="Enter your email address" />
             {#if inputError}
                 <span class="error">Whoops, make sure it's an email</span>
                 <img src="/icon-error.svg" alt="exclamation icon" class="error-icon">
